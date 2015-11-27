@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans        
+    http://www.springframework.org/schema/beans/spring-beans.xsd        
+    http://code.alibabatech.com/schema/dubbo        
+    http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+ 
+    <dubbo:reference id="userService" interface="com.service.provider.UserService" />
+    
+    <dubbo:reference id="hrofirstUserService" interface="com.service.provider.HROFirstUserService" />
+
+    <dubbo:reference id="ququIntentService" interface="com.service.provider.QuQuIntentService" />
+
+    <dubbo:reference id="pageService" interface="com.service.provider.PageService" />
+    
+    <dubbo:reference id="smsService" interface="com.service.provider.SMSService" />
+    <!-- 安心社保意向单 -->
+     <dubbo:reference id="intentMgtService" interface="com.service.provider.IntentMgtService" />
+</beans>

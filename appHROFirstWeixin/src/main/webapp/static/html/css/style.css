@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Initializing */
+pre{white-space: normal;}
+body,dl,dd,ul,ol,h1,h2,h3,h4,h5,h6,form,p{margin:0px;padding:0px;}
+body{font-size:12px;font-family:'Microsoft Yahei';color: #777777;line-height:23px;background:#fff;}
+img{border:0;}
+ul,li{list-style:none;list-style-type: none}
+h1, h2, h3, h4, h5, h6 { font-size: 100% } /* 字体加粗与否，视页面标题更改 */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{ font-weight:bold;} /* 字体加粗与否，视页面标题更改 */
+i,b{ font-size:12px; font-weight:normal;font-style: normal;}
+input,button, textarea, select{ vertical-align: middle;}
+input{ height:18px; color:#000000; line-height:18px;outline:none;}
+select{ height:23px; color:#000000; line-height:23px;}
+button { cursor: pointer }
+em, cite { font-style: normal; }
+a{color:#777777;text-decoration:none;}
+a:hover{color: #a6e000;text-decoration: none; list-style:none;}
+.txtlf{ text-align:left;}
+.txtrg{ text-align:right;}
+.fl{ float:left;}
+.fr{ float:right;}
+.fix:after {content:'.';display:block;clear:both;visibility:hidden;height:0px;}/*清除浮动的一种方法，将此class名写在内部有浮动的标签中，便可清除子字元素的浮动，使用非常方便*/
+.fix {zoom:1;}
+.clearfixed:after { content: "."; clear: both; display: block; height: 0; overflow: hidden }
+.clearfixed { zoom: 1 } /* 增加清除浮动样式时，要注意当前元素是否为块结构，如果不是，要添加属性 display: block */
+.clear { display: block!important; float: none!important; clear: both; width: auto!important; height: 0;margin: 0 auto!important; padding: 0!important; font-size: 0; line-height: 0 }
+.brank{ line-height:8px; clear:both; height:8px;margin: 0 auto!important; padding: 0!important; font-size: 0; float: none!important;}
+.none{ display:none;}
+table{border-collapse:collapse;}

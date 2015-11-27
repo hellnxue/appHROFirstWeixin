@@ -1,0 +1,32 @@
+html{font-size:100%;height:100%;width:100%;}
+body{width:100%;padding:0;margin:0;color:#000;-webkit-text-size-adjust:100%;text-size-adjust:100%;font-family:Helvetica,Arial,sans-serif;font-family:"微软雅黑", Arial;font-size:1em;}
+a{color:#000;}
+.fl{float:left;}
+.fr{float:right;}
+.clearfix:after{content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
+.clearfix{zoom:1;}
+.websize{width:100%;}
+.header img{width:100%;}
+.section .title img{width:100%;}
+.section .content{}
+.section .content .item{float:left;width:38%;background:#fff;padding:3%;}
+.section .content .item .pic{width:100%;}
+.section .content .item .pic a,
+.section .content .item .pic a img{display:block;width:100%;}
+.section .content .item .name{padding:10px 0 5px;}
+.section .content .item .name a{font-size:13px;}
+.section .content .item .desc{height:40px;line-height:20px;color:#9a9999;font-size:12px;overflow:hidden;}
+.section .content .item .price{color:#fe4747;font-size:14px;}
+.section .content .item .price b{font-size:20px;font-weight:normal;}
+.section .content .i01,
+.section .content .i02,
+.section .content .i03,
+.section .content .i04{margin-left:4%;}
+.s1{background:#e7d0fe;}
+.s2{background:#ffeabe;}
+.s3{background:#ffcccc;}
+.s1 .content .item .desc{height:60px;}
+.s3 .content{padding-bottom:5%;}
+.bot{background:#ffeabe;padding:5% 0;}
+.bot a{display:block;width:80%;background:#f84949;margin:0 auto;padding:5% 0;border-radius:4px;color:#fff;text-align:center;}
+.bot a:hover{text-decoration:none;}

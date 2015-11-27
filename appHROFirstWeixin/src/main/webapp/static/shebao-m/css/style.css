@@ -1,0 +1,240 @@
+@charset "utf-8";
+/* CSS Document */
+/*--------------------首页-------------------------*/
+html {font-size: 100%;height:100%;width:100%;}
+body{padding:0;margin:0;color:#000;-webkit-text-size-adjust:100%;text-size-adjust:100%;font-family:Helvetica,Arial,sans-serif;font-family: 微软雅黑;font-size:0.9em;position:relative;background:#fff; background-size: 100%; width:100%;}
+form,ul,li,dl,dt,dd,ol,p,h1,h2,h3,h4,h5,input{padding:0;margin:0;list-style:none}
+p{ font-size:1em; line-height:1.48em;}
+a:link{color:#000;text-decoration:none}
+table { border-collapse: collapse; border-spacing: 0;}
+a:visited{color:#333;text-decoration:none}
+a:hover{color:#898989;text-decoration:none}
+a:active{color:#2fadc1;text-decoration:none}
+.clearfixed:after { content: "."; clear: both; display: block; height: 0; overflow: hidden }
+.clearfixed { zoom: 1 } /* 增加清除浮动样式时，要注意当前元素是否为块结构，如果不是，要添加属性 display: block */
+.clear { display: block!important; float: none!important; clear: both; width: auto!important; height: 0;margin: 0 auto!important; padding: 0!important; font-size: 0; line-height: 0 }
+*html .clearfix{height:1%;}
+*+html .clearfix{height:1%;}
+.ui-mobile,.ui-mobile body{height:100%}
+.fr{float:right;}
+.fl{float:left;}
+.none{display:none;}
+input[type="button"], input[type="submit"], input[type="reset"] {-webkit-appearance: none;}
+.container{margin:0 auto;}
+.mainbody{padding:0 2%;}
+.partner .tit{width:270px;height:27px;background:url(../images/tit01.png) no-repeat;background-size:100%;}
+.partner_list {border:1px solid #e5e5e5;}
+.partner_list li{width:33%;float:left;font-size:10px;text-align:center;padding:10px 0;}
+.vip_tabbox{width:100%;height:88px;overflow:hidden;}
+.serice_box .tit{width:120px;height:27px;background:url(../images/tit02.png) no-repeat;background-size:100%;}
+.serice_box,.partner{margin-top:14px;}
+.service_list .service_title{color:#2577e3;font-size:15px;line-height:36px;padding:0 15px;}
+.service_list .service_title span{display:inline-block;width:14px;height:14px;background:url(../images/list02.png) no-repeat;background-size:100%;margin-top:8px;}
+.service_list li.on .service_title span{background:url(../images/list03.png) no-repeat;}
+.service_list .service_title span.cur{background:url(../images/list03.png) no-repeat;}
+.service_list .service_text{background:#fafafa;border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;padding:10px 15px;font-size:12px;color:#333;display:none;}
+.service_list li.on .service_text{display:block;}
+.service_list .service_text dl{margin-bottom:10px;}
+.service_list .service_text dl dd{background:url(../images/list01.png) no-repeat left 10px;padding-left:12px;line-height:22px;}
+.service_list .service_text dl dt{line-height:28px;}
+.price_mk{background:url(../images/bg01.png) no-repeat;background-size:100%;height:70px;padding:0 10%;margin-bottom:12px;}
+.price_mk a{font-size:16px;color:#fff;width:104px;height:35px;line-height:35px;background:#ff3000;display:inline-block;text-align:center;margin-top:18px;margin-left:10px;}
+.price_mk .font01{color:#fff100;font-size:12px;padding-top:15px;}
+.price_mk .font02{font-size:25px;color:#fff100;line-height:20px;}
+.price_mk .font02 span{color:#fff; text-decoration:underline;font-style:italic;}
+.notice_mk{background:#fafafa;border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;padding:20px 8%;font-size:14px;color:#333;}
+.notice_mk p{background:url(../images/clock.png) no-repeat left center;padding-left:30px;}
+.mr10{margin-right:10px;}
+.citylist{ position:relative;}
+.citylist input{width:1.2rem;height:1.2rem; vertical-align:middle;}
+.region-wrapper {
+	border:1px solid #9ABB59;
+	display: none;
+	width:100%;
+	position:absolute;
+	z-index:1000;
+	background-color:#fff;
+	left:0px;
+	top:50px;
+}
+.region-select {
+	background:#FFF;
+	border:1px solid #ddd;
+	float:left;
+	line-height:16px;
+	min-height:21px;
+	_height:21px;
+	width:194px;
+	padding:6px 38px 3px 10px;text-align:left;
+}
+.region-trigger {
+	background:url(../images/citybg.png) no-repeat 0 -590px;
+	display:block;
+	position:absolute;left:270px;top:12px;
+	height:21px;
+	width:17px;
+}
+.region-wrapper .orange {
+	color:#ff7300
+}
+.region-wrapper .num {
+	font-size:10px;
+	-webkit-text-size-adjust:none
+}
+.region-wrapper .r-h {
+	background-color:#f0f0f0;
+	height:28px;
+	line-height:28px;
+	padding:0 16px;
+	text-align:right
+}
+.region-wrapper .r-h .t {
+	font-weight:700;
+	float:left
+}
+.region-wrapper .r-h .close {
+	font-size:16px
+}
+.region-wrapper .r-b {
+	padding:0 10px;
+	position:relative;
+	zoom:1
+}
+.region-wrapper .r-b .cont p {
+	color:#999;
+	margin:8px 0
+}
+.region-wrapper .r-b li {
+	clear:both;
+	line-height:36px
+}
+.region-wrapper .r-b dl dt,.region-wrapper .r-b dl dd {
+	
+	width:75px;
+	position:relative
+}
+.region-wrapper .r-b dl dd {
+	width:90px;
+	height:36px;
+	padding:0 5px 0 0;
+	border:1px solid #fff;float:left;margin-right:10px;
+	border-width:1px 1px 0
+}
+.region-wrapper .r-b dl .light {
+	background-color:#f6f6f6;
+	border:1px solid #a4a4a4;
+	border-width:1px 1px 0;padding-left:5px;
+	z-index:10
+}
+.region-wrapper .r-b dl dd.select {
+	background-color:#fffec6
+}
+.region-wrapper .r-b dl dt {
+	font-weight:700
+}
+.region-wrapper .r-b dl input {
+	
+	margin-right:5px;
+	+margin-right:0;
+	*vertical-align:middle;
+	_vertical-align:-3px
+}
+.region-wrapper .r-b .o {
+	text-align:right;
+	height:20px;
+	line-height:20px;
+	padding:5px 0;margin-top:20px;
+}
+.region-wrapper .r-b dl .unfold,.region-wrapper .r-b dl .fold {
+	background:url(../images/citybg01.png) no-repeat 0 7px transparent
+}
+.region-wrapper .r-b dl .unfold {
+	display:inline-block;
+	width:10px;
+	height:13px;
+	margin-left:4px;
+	text-decoration:none;
+	vertical-align:0;
+	*vertical-align:6px
+}
+.region-wrapper .r-b dl .fold {
+	background-position:0 -10px
+}
+.region-wrapper .r-b .city {
+	position:absolute;
+	top:36px;
+	left:-1px;
+	width:155px;
+	background-color:#f6f6f6;
+	z-index:10;
+	display:none;
+	border:1px solid #a4a4a4
+}
+.region-wrapper .r-b .city ul {
+	padding:0 0 0 5px;
+	overflow:hidden;
+	zoom:1
+}
+.region-wrapper .r-b .city li {
+	display:inline;
+	margin:0 10px 0 0;
+	border-width:0;
+	float:left
+}
+.region-wrapper .r-b .city .o {
+	padding:5px 10px
+}
+.region-wrapper .r-b .city .line {
+	display:block;
+	width:100px;
+	background-color:#f6f6f6;
+	height:2px;
+	margin-top:-1px
+}
+.region-wrapper .r-b #tip {
+	display:none;
+	width:218px;
+	position:absolute;
+	top:20px;
+	left:200px;
+	background-color:#fffbdd;
+	border:1px solid #ecd3a7;
+	line-height:24px;
+	z-index:11;
+	padding:0 5px
+}
+.region-wrapper .btn-a2 {
+	float:none;
+	display:inline-block;
+	margin-left:15px
+}
+.go-ico-del {
+display: inline-block;
+background: url(../images/close.png) no-repeat;
+width: 15px;
+height: 15px;
+}
+.form_list .list .sb_select{}
+.redtishixing{color:#ff3000;margin-right:4px;}
+.form_list .list{padding:10px 0;border-bottom:1px solid #e5e5e5;}
+.m15{margin-top:15px;}
+.sub_btn{width:170px;height:50px;background:#ff3000;border:none;color:#fff;cursor:pointer;font-family:'微软雅黑';font-size:22px;margin-top:10px;}
+.form_list .list select{height:25px;}
+.form_list .list .mk_box .tit{display:inline-block;line-height:25px;}
+.form_list .list .text{height:25px;line-height:25px;padding:0 5px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

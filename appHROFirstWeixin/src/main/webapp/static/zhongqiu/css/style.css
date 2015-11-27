@@ -1,0 +1,113 @@
+@charset "utf-8";
+/* CSS Initializing */
+pre{white-space: normal;}
+body,dl,dd,ul,ol,h1,h2,h3,h4,h5,h6,form,p{margin:0px;padding:0px;}
+body{font-size:12px;font-family:'Microsoft Yahei';color: #777777;line-height:23px;background:#fff;}
+img{border:0;}
+ul,li{list-style:none;list-style-type: none}
+h1, h2, h3, h4, h5, h6 { font-size: 100% } /* 字体加粗与否，视页面标题更改 */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{ font-weight:bold;} /* 字体加粗与否，视页面标题更改 */
+i,b{ font-size:12px; font-weight:normal;font-style: normal;}
+input,button, textarea, select{ vertical-align: middle;}
+input{ height:18px; color:#000000; line-height:18px;outline:none;}
+select{ height:23px; color:#000000; line-height:23px;}
+button { cursor: pointer }
+em, cite { font-style: normal; }
+a{color:#777777;text-decoration:none;}
+a:hover{color: #a6e000;text-decoration: none; list-style:none;}
+.txtlf{ text-align:left;}
+.txtrg{ text-align:right;}
+.fl{ float:left;}
+.fr{ float:right;}
+.fix:after {content:'.';display:block;clear:both;visibility:hidden;height:0px;}/*清除浮动的一种方法，将此class名写在内部有浮动的标签中，便可清除子字元素的浮动，使用非常方便*/
+.fix {zoom:1;}
+.clearfixed:after { content: "."; clear: both; display: block; height: 0; overflow: hidden }
+.clearfixed { zoom: 1 } /* 增加清除浮动样式时，要注意当前元素是否为块结构，如果不是，要添加属性 display: block */
+.clear { display: block!important; float: none!important; clear: both; width: auto!important; height: 0;margin: 0 auto!important; padding: 0!important; font-size: 0; line-height: 0 }
+.brank{ line-height:8px; clear:both; height:8px;margin: 0 auto!important; padding: 0!important; font-size: 0; float: none!important;}
+.none{ display:none;}
+table{border-collapse:collapse;}
+
+
+/**主栏目**/
+.section-box{position: relative;height: 100%;width: 100%;}
+.section-box .section-list{width:100%;background: #FFF;}
+.section-box .section-list .m-img{width:100%; height:100%;}
+.section-box .series-list{ width:100%;}
+.section-box .hide{z-index: 5;}
+.section-box .show{z-index: 8;}
+.section-box .active{z-index: 10;}
+
+.section-box .pageHeader_dg{ width:98%; margin:0px auto; z-index:99999;}
+.section-box .pageHeader_dg img{ width:100%;}
+.section-list li{ width:100%; margin:0px auto; position:relative;}
+.section-list li .upico{position:absolute; top:60px; right:20px; z-index:10;display:inline-block;width:20px;height:12px;background:url(../images/icon_down.png) no-repeat;background-size:100%;}
+.section-list li.cur .upico{background:url(../images/icon_up.png) no-repeat;background-size:100%;}
+/* 瀑布流样式 */
+.waterfall{overflow:hidden;zoom:1;width:100%;}
+.wf_inner{margin:15px auto;}
+.wf_col{position:relative;min-height:473px;_height:473px;border-top:1px solid #f3f3f3;}
+.wf_item{
+	box-sizing:border-box;width:235px;color:#565656;
+	float:left;overflow:hidden;zoom:1;
+	position:absolute;border:1px solid #f3f3f3;
+}
+.wf_item_inner{margin:10px;}
+.wf_item .thumb{position:relative;display:block;overflow:hidden;}
+.wf_item .thumb_img{width:100%;max-width:100%;-ms-interpolation-mode:bicubic;/*解决IE7缩放图片会失真*/}
+.wf_item .title{margin:7px 0 0;color:#333;font-size:15px;}
+.wf_item .title a{color:#727171;}
+.wf_item .desc{word-wrap:break-word;word-break:break-all;color:#888;font-size:15px;}
+.wf_result{height:32px;line-height:32px;margin-top:15px;text-align:center;color:#666;}
+.wf_loading{background:url(../images/loading.gif) center center no-repeat;}
+#backTop:hover{background-position:0 0;}
+.wf_item .thumb .price{position:absolute;bottom:0;margin:0 5%;background:#f06771;color:#fff;left:0;display:block;width:90%;height:24px; text-align:center; text-decoration:line-through;font-size:14px;}
+.wf_item .thumb .price b{font-size:16px;}
+/* list 瀑布流 */
+.container{ width:98%; margin:0px auto;}
+.container ul{ margin-top:10px;}
+.container li{background-color:#FFF; border:1px solid #f1f1f1; padding:0px 3px; width:47%;float:left;}
+.container ul li img{width:100%;height:auto; vertical-align:bottom;}
+.div_lists{ position:relative;}
+.div_lists_jiage{position:absolute; bottom:0px; left:0px; text-align:center; z-index:1000; width:100%;}
+.div_lists_jiage span{display:inline-block; text-align:center; width:118px; background:rgba(255, 0, 0, 0.5); height:22px; line-height:22px; color:#fff; font-size:14px;}
+.water_user{color:#666;font-size:18px;line-height:22px;color:#575757;}
+.water_user h1{ font-size:0.86em; font-family:"微软雅黑";}
+.water_user p{ font-size:0.7em; line-height:24px;}
+.pdp4{padding:4%;}
+.text_left{display:inline-block; float:left;}
+.text_right{display:inline-block; width:115px;}
+.goodsprice{color:#f06771;font-size:15px;}
+.goodsprice b{font-weight:bold;font-size:15px;}
+/**  订单  **/
+.topbg{height:50px; line-height:50px; background:#5d65d8;position:relative;}
+.topbg a{height:21px;width:12px;display:inline-block; background:url(../images/bak_ico.png) no-repeat;background-size:100%;left:10px; vertical-align:middle;position:absolute;top:12px;}
+.topbg h1{color:#fff;text-align:center;font-size:18px;font-weight:normal;}
+.inuts_text{ font-size:16px; font-family:"微软雅黑"; line-height:25px; padding:44px 0px 14px 0px}
+.inuts_lists{padding-left:6px;padding-bottom:20px;}
+.inuts_lists li{ width:100%; margin-top:12px; font-size:15px; font-family:"微软雅黑"; border:none !important;float:none;}
+.inuts_lists li span{ display:inline-block; width:80px;}
+.inuts_lists li span.form-tip{width:auto;margin-left:80px;display: inherit;}
+.inuts_lists .inputs{ border:1px solid #dcdbdb; height:34px; line-height:34px; padding:0px 0px 0px 5px; width:70%;-webkit-appearance: none;border-radius:0;font-size:14px;}
+.sub_but{ width:90%; border-radius:10px; background:#ed4c59; font-size:19px; border:none; color:#fff; font-family:"微软雅黑"; height:42px; line-height:42px;-webkit-appearance: none;display:inline-block;text-align:center;}
+a.sub_but{color:#fff;}
+.inuts_lists .error-ipt-tip{ border:1px solid #F00;}
+.inuts_lists .ok-ipt-tip{ border:1px solid #43c475;}
+.inuts_lists .ok-tip{ color:#43c475;display:none !important;}
+.inuts_lists .error-tip{color:#F00;}
+.dataBorderBox{display:inline-block; vertical-align:middle;}
+.dataBorderBox{border:1px solid #dcdbdb;}
+.CandP {cursor: pointer;float: left;font-weight: bold;height: 25px;line-height: 25px;text-align: center;width: 28px  !important;font-size:18px;}
+.ticNum {border:none;border-left:1px solid #dcdbdb;border-right:1px solid #dcdbdb; float: left;height: 25px;line-height: 19px;text-align: center;width: 42px;-webkit-appearance: none;border-radius:0;}
+
+/**  弹出层  **/
+i{ font-style:normal;}
+#detail{ display:none;}
+#detail .tit{ background:#5d65d8; display:block; height:33px; cursor:move;position:relative;}
+.closeico{display:inline-block;cursor:default;width:30px;height:30px;background:url(../images/close.png) no-repeat;background-size:100%;margin-right:15px;margin-top:12px;}
+.tit_cont{font-size:14px; font-family:"微软雅黑";color:#595757; padding:10% 16px;}
+#vtip{ display:none;}
+#detail .tit .close{color:#fff;position:absolute;right:10px;top:7px;font-famil:'宋体';font-size:15px;}
+.layer_order{background:rgba(0,0,0,0.8);position:fixed;left:0;top:0;width:100%;height:100%;}
+.order-notice{position:absolute;background:#fff;padding-bottom:25px;bottom:0;}
+#detail{position:fixed;width:100%;bottom:0;height:100%;}
