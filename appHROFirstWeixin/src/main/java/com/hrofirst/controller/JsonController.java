@@ -74,9 +74,8 @@ public class JsonController {
     private CityService cityService;
     @Autowired
     private SalaryService salaryService;
-    @Autowired
+    @Autowired(required=false)
 	private IntentMgtService intentMgtService;
-
     @RequestMapping("province")
     public List<Province> findAllProvince() {
         return provinceService.findByTypeNot(ProvinceService.ProvinceType.其他国家);
@@ -387,31 +386,13 @@ public class JsonController {
     @RequestMapping("hrhelper-platform/anxinshebaoDemandUpdate")
     public String anxinshebaoDemandUpdate(@RequestBody  IntentInfo intentInfo) {
     	
-    	System.out.println("hahahahaha================"+intentInfo.getName());
-    	 
-    	//ReturnS ret = quQuIntentService.addIntent("{\"mobile\":\""+mobile+"\",\"name\":\"zhiyang|"+inname+"\",\"storeId\":1}"); 
+    	intentInfo.setChannel("第一人力微信");     //来源渠道
+		ReturnS ret = intentMgtService.addSocialSecurity(intentInfo);
 		
-		
-		
-		
-		//intentInfo.setServiceArea("上海");
-		
-		
-		
-		
-		//ReturnS ret = intentMgtService.addSocialSecurity(intentInfo);
-		
-		
-		
-		
-		
-		
-		
-		
-    	if (false)
+    	if (ret.getSuccess())
     		return "{\"staus\":\"true\",\"message\":\"小安收到您的意向单啦，请保持手机畅通哦，小安正在马力全开，2个工作日内一定会与您联系，请耐心等待哦！\"}";
     	else
-    		return "{\"staus\":\"false\",\"message\":\"订单提交失败！ \"}";
+    		return "{\"staus\":\"false\",\"message\":\""+ret.getMsg()+"！ \"}";
     }
     
     @RequestMapping("/service/ewage.e")

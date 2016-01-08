@@ -9,6 +9,13 @@
 	<url>http://maven.apache.org</url>
 
 	<dependencies>
+	   <dependency>
+	      <groupId>com.ezhiyang</groupId>
+	      <artifactId>commons-dubbo-api</artifactId>
+	      <version>${fnst.common.version}</version>
+	      <scope>system</scope>
+	      <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/commons-dubbo-api-0.0.1-SNAPSHOT.jar</systemPath>
+	    </dependency>
 	    <dependency>
 	      <groupId>com.fnst</groupId>
 	      <artifactId>es-common</artifactId>

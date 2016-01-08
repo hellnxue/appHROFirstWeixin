@@ -36,9 +36,8 @@
     <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="${ctx}/static/comp/amazeui/i/app-icon72x72@2x.png">
     <meta name="msapplication-TileColor" content="#0e90d2">
-<link href="${ctx }/static/shebao-m/css/style.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="${ctx }/static/shebao-m/js/jquery.js"></script>
-<script type="text/javascript" src="${ctx }/static/shebao-m/js/web.js"></script>
-<script src="${ctx }/static/shebao-m/js/multiregion.js" type="text/javascript"></script>
+   
+	<link href="${ctx }/static/shebao-m/css/style.css" rel="stylesheet" type="text/css">
+	 <%-- <link rel="stylesheet" href="${ctx}/static/assets/css/amazeui.min.css"> --%>
 </head>
 <body>

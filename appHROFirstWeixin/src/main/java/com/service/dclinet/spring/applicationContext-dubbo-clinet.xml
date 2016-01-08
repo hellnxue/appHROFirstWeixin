@@ -16,6 +16,7 @@
     <dubbo:reference id="pageService" interface="com.service.provider.PageService" />
     
     <dubbo:reference id="smsService" interface="com.service.provider.SMSService" />
-    <!-- 安心社保意向单 -->
-     <dubbo:reference id="intentMgtService" interface="com.service.provider.IntentMgtService" />
+    
+     <!-- 安心社保意向单接口 -->
+	 <dubbo:reference id="dubbo.intentMgtService" interface="com.service.provider.IntentMgtService" />
 </beans>

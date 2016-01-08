@@ -2,22 +2,23 @@
 <%@include file="/WEB-INF/jsp/common/taglibs.jspf" %>
 
 <es:webAppAnxinshebaoHeader title="安心社保-智阳网络" description="智阳网络技术" keywords="智阳网络技术"/>
+  <form id="myForm" method="post" class="am-form">
 <div class="home">
   <div class="container">
     <div class="mainbody">
     	<div class="notice_mk">
         	<p>您正在申请的是安心社保服务。<br>您的资料将采用加密技术传输，请放心填写。</p>
         </div>
-        
         <div class="form_list">
               <div class="list citylist"><div class="mk_box">
               <div class="tit fl"><em class="redtishixing">*</em><span class="tits">地区：</span></div>
               <div class="rs_cityselect fl">
                 <div class="city_selected_show region-over-mian line-content fix" id="region-select-cell">
                   <input name="region-data" id="region-data" type="hidden" value="">
-                  <ul class="region-select fix">
+                  <ul class="region-select fix" >
                     <li class="item"><span id="areas"></span></li>
                   </ul>
+                  <br id="areasErrmsg"/> 
                   <a class="region-trigger" href="javascript:;" data-spm-anchor-id="0.0.0.0"></a>
                   <div class="region-wrapper">
                     <div class="r-b">
@@ -2028,44 +2029,30 @@
                       </div>
                       <div class="o"><a href="javascript:;" target="_self" class="fui-btn go-ico-del" action="cancel"></a></div>
                       <span id="tip">红色文字表示在其他指定地区中有勾选，<br>
-                      再次勾选会更新之前该省份的设置</span></div>
+                                                                  再次勾选会更新之前该省份的设置</span></div>
                   </div>
                 </div>
               </div>
               <div class="clear"></div>
-               <span id="areaerror" style="color:red;"> </span>
             </div></div>
+            <!-- 地区结束 -->
               <div class="list">
               <div class="mk_box">
               <div class="tit fl"><em class="redtishixing">*</em><span class="tits">产品：</span></div>
-              <div class="sb_select fl">
-              <span class="mr10"><input type="checkbox" name="product" value="1" checked="checked"> <label>社保<label></span>
+              <div class="sb_select fl" id="productsErrmsg">
+              <span class="mr10"><input type="checkbox" name="product" value="1" checked="checked"  data-validation-message="请选择产品" required >社保</span>
               <span class="mr10"><input type="checkbox" name="product" value="2"> 住房公积金</span>
               <span class="mr10"><input type="checkbox" name="product" value="3"> 代发工资</span>
-              <span class="mr10"><input type="checkbox" name="product" value="4"> dayHR</span>
+              <span class="mr10"><input type="checkbox" name="product" value="4"> dayHR</span><br/>sdfsdfdsf
               </div>
                <div class="clear"></div>
               </div>
               </div>
-             <!--  <div class="list">
-              <div class="mk_box">
-              <div class="tit fl"><em class="redtishixing">*</em><span class="tits">基数：</span></div>
-              <div class="sb_select fl"><select id="jishu"><option>员工实际工资</option><option> 最高封顶基数</option><option>社平工资基数</option><option>最低下限基数</option></select></div>
-               <div class="clear"></div>
-              </div>
-              </div> -->
-              <!-- <div class="list">
-              <div class="mk_box">
-              <div class="tit fl"><em class="redtishixing">*</em><span class="tits">方式：</span></div>
-              <div class="sb_select fl"><select id="fangshi"><option>加入供应商集体账户缴纳</option><option> 以客户名义建立账户缴纳</option></select></div>
-               <div class="clear"></div>
-              </div>
-              </div> -->
-              <div class="list">
+          <div class="list">
           <div class="mk_box">
             <div class="tit fl"><em class="redtishixing">*</em><span class="tits" >联系人姓名：</span></div>
-            <div class="sb_select fl">
-              <input class="text" type="text" name="text" value="" id="linkman"/>
+            <div class="sb_select fl" id="linkmanErrmsg">
+              <input class="text" type="text" name="text" value="" id="linkman" placeholder="中英文组合，长度不超过十位字符"  data-validation-message="请输入联系人姓名" required/> <br/>
             </div>
             <div class="clear"></div>
           </div>
@@ -2073,8 +2060,8 @@
         <div class="list">
           <div class="mk_box">
             <div class="tit fl"><em class="redtishixing">*</em><span class="tits">联系人电话：</span></div>
-            <div class="sb_select fl">
-              <input class="text" type="text" name="text" value="" id="linkmobile"/>
+            <div class="sb_select fl" id="linkmobileErrmsg">
+              <input class="text" type="text" name="text" value="" id="linkmobile"/> <br/>
             </div>
             <div class="clear"></div>
           </div>
@@ -2082,8 +2069,8 @@
          <div class="list">
           <div class="mk_box">
             <div class="tit fl"><em class="redtishixing">*</em><span class="tits">服务人数：</span></div>
-            <div class="sb_select fl">
-              <input class="text" type="text" name="text" value="" id="serviceNum"/>
+            <div class="sb_select fl" id="serviceNumErrmsg">
+              <input class="text" type="text" name="text" value="" id="serviceNum"/><br/>
             </div>
             <div class="clear"></div>
           </div>
@@ -2091,8 +2078,8 @@
          <div class="list">
           <div class="mk_box">
             <div class="tit fl"><em class="redtishixing">*</em><span class="tits">用户名：</span></div>
-            <div class="sb_select fl">
-              <input class="text" type="text" name="text" value="" id="loginName"/>
+            <div class="sb_select fl" id="loginNameErrmsg">
+              <input class="text" type="text" name="text" value="" id="loginName"/> <br/>
             </div>
             <div class="clear"></div>
           </div>
@@ -2100,8 +2087,8 @@
          <div class="list">
           <div class="mk_box">
             <div class="tit fl"><em class="redtishixing">*</em><span class="tits">密码：</span></div>
-            <div class="sb_select fl">
-              <input class="text" type="text" name="text" value="" id="password"/>
+            <div class="sb_select fl" id="passwordErrmsg">
+              <input class="text" type="password" name="text" value="" id="password"/> <br/>
             </div>
             <div class="clear"></div>
           </div>
@@ -2109,131 +2096,238 @@
          <div class="list">
           <div class="mk_box">
             <div class="tit fl"><em class="redtishixing">*</em><span class="tits">企业名称：</span></div>
-            <div class="sb_select fl">
-              <input class="text" type="text" name="text" value="" id="orgName"/>
+            <div class="sb_select fl" id="orgNameErrmsg">
+              <input class="text" type="text" name="text" value="" id="orgName"/> <br/>
             </div>
-            <div class="clear"></div>
+            <div class="clear">asdfsdfsdfdsfdfsdf</div>
           </div>
         </div>
      <!--<p align="center" class="m15"><input type="checkbox"> 免责声明</p> -->
-         <p align="center"><input type="button" class="sub_btn" value="提 交" id="shebaosubmit"></p>
+         <p align="center"><input type="submit" class="sub_btn" value="提 交" id="shebaosubmit"></p>
         </div>
     </div>
   </div>
 </div>
+ </form>
+<script src="${ctx}/static/assets/js/jquery.min.js"></script> 
+<script src="${ctx}/static/assets/js/amazeui.js"></script> 
+<!-- v1.6.2 jquery -->
+<%-- <script type="text/javascript" src="${ctx }/static/shebao-m/js/jquery.js"></script> --%>
+<script type="text/javascript" src="${ctx }/static/shebao-m/js/web.js"></script>
+<script src="${ctx }/static/shebao-m/js/multiregion.js" type="text/javascript"></script>
 <script>
-$(function(){
-	$("#shebaosubmit").click(function(){
-		 handleSubmit();
-	});
-	
-});
+
+	$(function() {
+		 /*  $("#shebaosubmit").click(function() {
+			handleSubmit();
+		});   */
 		
-	function handleSubmit(){
-		var areas=$("#areas").html();//区域
-		 
-		
-		var products="";
-		$(":checked[name=product]").each(function(){
-			 
-			products+=$(this).val()+",";
-			//console.log($(this).html());
-		});
-		
-		
-		products=products.substring(0,products.length-1);//产品
-		
-		 
-		
-		var linkman=$("#linkman").val();
-		var linkmobile=$("#linkmobile").val();
-		var serviceNum=$("#serviceNum").val();  //服务人数
-		
-		var loginName=$("#loginName").val();	//用户名
-		var password=$("#password").val();		//密码
-		var orgName=$("#orgName").val();		//企业名称
-		
-		var linkmanpattern=/^\s*[\s\S]{1,10}\s*$/.test(linkman);
-		
-		var linkmobilepattern=/^13[0-9]{9}$|^14[5|7][0-9]{8}$|^15[012356789][0-9]{8}$|^17[0|6-8][0-9]{8}$|^18[0-9]{9}$/.test(linkmobile);
-		
-		 
-		
-		
-		
-		
-		if(areas==""){
-			alert("请选择地区！");
-			return false;
-		}
-		if(products==""){
-			alert("请选择产品！");
-			return false;
-		}
-		
-		if(!linkmanpattern){
-			alert("联系人姓名不能超过10个汉字或为空！");
-			return false;
-		}
-		if(!linkmobilepattern ){
-			alert("手机号码格式错误！");
-			return false;
-		}
-		
-		/* var jishu=$("#jishu").find("option:selected").val();
-		
-		var fangshi=$("#fangshi").find("option:selected").val();
-		
-		console.log(fangshi); */
-		
-		$("#shebaosubmit").unbind("click");
-		
-		//var name=linkman+"|"+areas+"|"+products+"|"+jishu+"|"+fangshi;
-		
-		var dataObject={
-				serviceArea:areas,
-				prodCode:products,
-				name:linkman,
-				mobile:linkmobile,
-				loginName:loginName,
-				password:password,
-				orgName:orgName,
-				serviceNum:serviceNum
-		};
-		
-		var jsonObject=JSON.stringify(dataObject);
-		
-		console.log(jsonObject);
-		
-		  $.ajax({ 
-			  async:false,
-			  contentType: "application/json",
-			  dataType: "json",
-			  type: "POST", 
-			  url: "${ctx}/hrhelper-platform/anxinshebaoDemandUpdate", 
-			 // data: "areas="+encodeURI(encodeURI(areas))+"&products="+encodeURI(encodeURI(products))+"&jishu="+encodeURI(encodeURI(jishu))+"&fangshi="+encodeURI(encodeURI(fangshi)), 
-			  data:jsonObject,
-			  success: function(objarray){
-				  console.log("objarray="+objarray);
-				 /*  if(objarray.staus=="true"){
-					  alert(objarray.message);
-					  //window.location.replace("${ctx}/anxinshebao/index");
+		$("#myForm").validator({
+			  onInValid: function(validity) {
+				  console.log(123);
+			       var $field=$(validity.field);
+				   
+				   //验证不通过时
+					if(!validity.valid){
+					 
+					   $field.parent("div").find("label").html("").remove();
 					  
+					   $field.parent("div").append("<label style='color:red'>"+$field.data('validationMessage')+"</label>");
+					   
+					  
+					}
+			  
+			  },
+			  //验证通过时
+			  onValid: function(validity) {
+				 
+				 $(validity.field).parent("div").find("label").html("").remove();
+				 
+				},
+			 patterns:{
+				  //pwd:/[^0-9]/
+				},
+				submit:function(){
+				 
+				  if(!this.isFormValid()){//表单验证状态
+				   
+					return false;
 				  }else{
-					  alert(objarray.message);
-					  $("#shebaosubmit").click(function(){
-							 handleSubmit();
-						});
-				  } */
-			   },
-			  error: function(){
+					alert("success");
+				    return false;//暂时设置为不提交
+				  }
 				  
-				  console.log("ajax异常错误");
-			  }
-			});   
+				}
+			  
+			
+			}); 
 		
+
+	//错误信息函数
+	function showErrorMsg(msgid, msg) {
 		
+		var lbcr = msgid + "cr";
+
+		if ($("#" + lbcr).html() != null) {
+			$("#" + lbcr).html("").remove();
+		}
+		if (arguments.length == 2) {
+			console.log(msg);
+			if (msgid != "areasErrmsg") {
+				$("#" + msgid).append(
+						"<label style='color:red;' id='"+lbcr+ "' >" + msg
+								+ "<label>");
+			} else {
+				$("#" + msgid).after(
+						"<label style='color:red;' id='"+lbcr+ "' >" + msg
+								+ "<label>");
+			}
+			
+			return false;
+		}
+		
+
 	}
+
+	//处理数据
+	function handleSubmit() {
+		var areas = $("#areas").html();//区域
+
+		var products = "";
+		$(":checked[name=product]").each(function() {
+
+			products += $(this).val() + ",";
+		});
+		products = products.substring(0, products.length - 1);//产品
+
+		var linkman = $("#linkman").val();
+		var linkmobile = $("#linkmobile").val();
+		var serviceNum = $("#serviceNum").val(); //服务人数
+
+		var loginName = $("#loginName").val(); //用户名
+		var password = $("#password").val(); //密码
+		var orgName = $("#orgName").val(); //企业名称
+
+		var linkmanpattern = /^\s*[\s\S]{1,10}\s*$/.test(linkman);
+		
+		var linkmanpattern1=/^[\u4E00-\u9FA5a-zA-Z]+$/.test(linkman);
+
+		var linkmobilepattern = /^13[0-9]{9}$|^14[5|7][0-9]{8}$|^15[012356789][0-9]{8}$|^17[0|6-8][0-9]{8}$|^18[0-9]{9}$/
+				.test(linkmobile);
+
+		var numpattern = /^[1-9][0-9]*$/.test(serviceNum);
+
+		if (areas == "") {
+			return showErrorMsg("areasErrmsg", "请选择地区！");
+		} else {
+			 showErrorMsg("areasErrmsg");
+		}
+		if (products == "") {
+			return showErrorMsg("productsErrmsg", "请选择产品！");
+		} else {
+			showErrorMsg("productsErrmsg");
+		}
+
+		if (!linkmanpattern) {
+			return showErrorMsg("linkmanErrmsg", "联系人姓名不能超过10个汉字或为空！");
+		}else if(!linkmanpattern1){
+			return showErrorMsg("linkmanErrmsg", "联系人姓名为中文、英文或两者的组合！");
+		} else {
+			showErrorMsg("linkmanErrmsg");
+		}
+		
+		if (linkmobile=="") {
+			return showErrorMsg("linkmobileErrmsg", "手机号码不能为空！");
+		} else if (!linkmobilepattern) {
+			return showErrorMsg("linkmobileErrmsg", "手机号码格式错误！");
+		} else {
+			showErrorMsg("linkmobileErrmsg");
+		}
+
+		if (serviceNum == "") {
+			return showErrorMsg("serviceNumErrmsg", "服务人数不能为空！");
+		} else if (!numpattern) {
+			return showErrorMsg("serviceNumErrmsg", "服务人数请填写正确数字！");
+		} else {
+			showErrorMsg("serviceNumErrmsg");
+		}
+
+		var loginNamePattern1 = /^[0-9]+$/.test(loginName);
+		var loginNamePattern2 = /^[a-zA-Z0-9_-]+$/.test(loginName);//用户名只能包括英文字母、数字和下划线_和-
+
+		console.log(loginName.length);
+		if (loginName == "") {
+			return showErrorMsg("loginNameErrmsg", "用户名不能为空！");
+		} else if (loginNamePattern1) {
+			return showErrorMsg("loginNameErrmsg", "用户名不能全是数字！");
+		} else if (!loginNamePattern2) {
+			return showErrorMsg("loginNameErrmsg", "用户名为英文字母数字和下划线_和-的组合！");
+		} else if (loginName.length<4||loginName.length>20) {
+			return showErrorMsg("loginNameErrmsg", "用户名必须在4-20个字符之间！！");
+		} else {
+			showErrorMsg("loginNameErrmsg");
+		}
+
+		var pwdPattern1 = /^[0-9]+$/.test(password);
+		var pwdPattern2 = /[a-zA-Z0-9]+$/.test(password);
+		console.log("length=======" + password.length);
+		if (password == "") {
+			return showErrorMsg("passwordErrmsg", "密码不能为空！");
+		} else if (pwdPattern1) {
+			return showErrorMsg("passwordErrmsg", "密码不能全是数字！");
+		} else if (!pwdPattern2) {
+			return showErrorMsg("passwordErrmsg", "密码格式为英文或英文与数字的组合！");
+		} else if (password.length<6||password.length>18) {
+			return showErrorMsg("passwordErrmsg", "密码长度为6-18位！");
+		} else {
+			showErrorMsg("passwordErrmsg");
+		}
+
+		if (orgName == "") {
+			return showErrorMsg("orgNameErrmsg", "企业名称不能为空！");
+		} else {
+			showErrorMsg("orgNameErrmsg");
+		}
+		
+		var dataObject = {
+			serviceArea : areas,
+			prodCode : products,
+			name : linkman,
+			mobile : linkmobile,
+			loginName : loginName,
+			password : password,
+			orgName : orgName,
+			serviceNum : serviceNum
+		};
+
+		var jsonObject = JSON.stringify(dataObject);
+
+		console.log(jsonObject);
+		   $.ajax({
+			async : false,
+			contentType : "application/json",
+			dataType : "json",
+			type : "POST",
+			url : "${ctx}/hrhelper-platform/anxinshebaoDemandUpdate",
+			data : jsonObject,
+			success : function(objarray) {
+				console.log("objarray=" + objarray);
+				if (objarray.staus == "true") {
+					$("#shebaosubmit").unbind("click");//取消点击事件绑定
+					//alert(objarray.message);
+					alert("安心社保意向单提交成功。可凭您刚才输入的用户名和密码到网址http://www.hrofirst.com登录查看。");
+					window.location.replace("${ctx}/anxinshebao/index");
+
+				} else {
+					alert(objarray.message);
+				}
+			},
+			error : function() {
+				console.log("ajax异常错误");
+			}
+		});  
+	};
+	});
 </script>
 </body>
 </html>
